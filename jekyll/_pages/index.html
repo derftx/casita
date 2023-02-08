@@ -1,8 +1,16 @@
 ---
-layout: base
 title: index
 ---
 
-<section>
-  <h1>index page</h1>
+<section class="hero-body">
+  <div>
+    <h1 class="title is-1">{{ site.title }}</h1>
+    <h2 class="subtitle is-3">{{ 'project' | downcase }}</h2>
+
+    <div class="tags are-medium">
+      {% for item in site.data.technology_stack %}
+      <span class="tag is-rounded">{{ item.text }}</span>
+      {% endfor %}
+    </div>
+  </div>
 </section>
