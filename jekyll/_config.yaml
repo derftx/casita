@@ -9,4 +9,7 @@ defaults:
     values:
       layout: base
 
+plugins:
+  - jekyll-sitemap
+
 title: casita
