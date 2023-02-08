@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### fixed
 
+- add support for the linux platform
+
 ### removed
 
 ### secured
