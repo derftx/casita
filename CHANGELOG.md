@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### added
 
-- configure the repository static website
+- configure the repository static website (#1)
 
 ### changed
 
@@ -17,7 +17,8 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### fixed
 
-- add support for the linux platform
+- add support for the linux platform (#3)
+- add support for sass on the linux platform (#5)
 
 ### removed
 
