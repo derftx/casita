@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - add support for the linux platform (#3)
 - add support for sass on the linux platform (#5)
+- downgrade the sass version on the linux platform (#7)
 
 ### removed
 
