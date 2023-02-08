@@ -1,0 +1,17 @@
+<!-- site_footer -->
+
+<footer class="footer">
+  <nav class="level">
+    <div class="level-item">
+      <div class="buttons are-medium">
+        {% for item in site.data.navigation_site_footer %}
+        <a class="button is-ghost" href="{{ item.url }}">{{ item.text }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </nav>
+
+  <div class="content has-text-centered">
+    <small>&copy; 2023 DERFTX &starf; fred belotte</small>
+  </div>
+</footer>

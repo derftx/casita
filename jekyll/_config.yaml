@@ -1,0 +1,15 @@
+collections:
+  pages:
+    output: true
+    permalink: /:name
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: base
+
+plugins:
+  - jekyll-sitemap
+
+title: casita
