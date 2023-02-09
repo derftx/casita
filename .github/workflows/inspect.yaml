@@ -28,7 +28,8 @@ jobs:
       pages: write
     runs-on: ubuntu-latest
     steps:
-      - name: deploy
+      - id: deployment
+        name: deploy
         uses: actions/deploy-pages@v1
 
 name: inspect
