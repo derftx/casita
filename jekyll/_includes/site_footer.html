@@ -4,8 +4,11 @@
   <nav class="level">
     <div class="level-item">
       <div class="buttons are-medium">
-        {% for item in site.data.navigation_site_footer %}
-        <a class="button is-ghost" href="{{ item.url }}">{{ item.text }}</a>
+        {% for item in site.data.navigation_site_footer %} {% assign page =
+        site.pages | where: 'slug', item.text %}
+        <a class="button is-ghost" href="{{ page[0].url | relative_url }}"
+          >{{ page[0].slug }}</a
+        >
         {% endfor %}
       </div>
     </div>

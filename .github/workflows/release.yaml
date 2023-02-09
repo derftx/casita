@@ -1,0 +1,40 @@
+jobs:
+  build:
+    name: build_jekyll
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: configure
+        uses: actions/configure-pages@v3
+      - name: build
+        uses: actions/jekyll-build-pages@v1
+        with:
+          destination: _site
+          source: jekyll
+      - name: upload
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    name: deploy_jekyll
+    needs: build
+    permissions:
+      id-token: write
+      pages: write
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        name: deploy
+        uses: actions/deploy-pages@v1
+
+name: release
+
+on:
+  push:
+    branches:
+      - main
