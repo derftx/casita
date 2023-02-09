@@ -31,3 +31,6 @@ jobs:
 name: inspect
 
 on: pull_request
+
+permissions:
+  id-token: write
