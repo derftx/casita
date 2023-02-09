@@ -1,5 +1,6 @@
 jobs:
   build:
+    name: build_jekyll
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -16,7 +17,22 @@ jobs:
         with:
           path: _site
 
-name: inspect
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    name: deploy_jekyll
+    needs: build
+    permissions:
+      id-token: write
+      pages: write
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        name: deploy
+        uses: actions/deploy-pages@v1
+
+name: release
 
 on:
   push:
