@@ -1,5 +1,6 @@
 jobs:
   build:
+    name: build_jekyll
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -15,6 +16,17 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    name: deploy_jekyll
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        uses: actions/deploy-pages@v1
 
 name: inspect
 
