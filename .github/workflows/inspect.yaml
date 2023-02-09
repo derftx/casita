@@ -23,6 +23,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     name: deploy_jekyll
     needs: build
+    permissions:
+      id-token: write
+      pages: write
     runs-on: ubuntu-latest
     steps:
       - name: deploy
@@ -31,6 +34,3 @@ jobs:
 name: inspect
 
 on: pull_request
-
-permissions:
-  id-token: write
