@@ -17,6 +17,23 @@ jobs:
         with:
           path: _site
 
+  scan:
+    name: test_jekyll
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: scan
+        uses: sonarsource/sonarcloud-github-action@v1
+        with:
+          args: >
+            -Dsonar.organization=derftx
+            -Dsonar.projectKey=derftx-casita
+            -Dsonar.sources=.
+          projectBaseDir: jekyll
+
 name: inspect
 
 on: pull_request
