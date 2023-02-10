@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - configure the repository static website [#1](https://github.com/derftx/casita/issues/1)
 - configure the static website inspect and release workflows [#11](https://github.com/derftx/casita/issues/11)
+- configure the repository static code analysis workflow [#13](https://github.com/derftx/casita/issues/13)
 
 ### changed
 

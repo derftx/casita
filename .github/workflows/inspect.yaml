@@ -17,6 +17,31 @@ jobs:
         with:
           path: _site
 
+  scan:
+    name: scan_jekyll
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        name: scan
+        uses: sonarsource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.organization=derftx
+            -Dsonar.projectKey=derftx:casita
+            -Dsonar.sources=.
+          projectBaseDir: jekyll
+
 name: inspect
 
-on: pull_request
+on:
+  pull_request:
+  workflow_call:
+    secrets:
+      SONAR_TOKEN:
+        required: true

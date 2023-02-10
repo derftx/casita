@@ -9,5 +9,5 @@
 
 [MIT License][license]
 
-[github]: https://github.com/derftx
+[github]: https://github.com/derftx/casita
 [license]: https://github.com/derftx/casita/blob/main/LICENSE
