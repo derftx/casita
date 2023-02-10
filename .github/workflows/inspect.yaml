@@ -25,12 +25,14 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: scan
-        uses: sonarsource/sonarcloud-github-action@v1
+      - env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        name: scan
+        uses: sonarsource/sonarcloud-github-action@master
         with:
           args: >
             -Dsonar.organization=derftx
-            -Dsonar.projectKey=derftx-casita
+            -Dsonar.projectKey=derftx:casita
             -Dsonar.sources=.
           projectBaseDir: jekyll
 
