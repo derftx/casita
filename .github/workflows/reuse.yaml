@@ -1,9 +1,0 @@
-jobs:
-  inspect:
-    name: inspect_jekyll
-    uses: ./.github/workflows/inspect.yaml
-    secrets: inherit
-
-name: reuse
-
-on: pull_request

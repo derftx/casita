@@ -40,6 +40,7 @@ jobs:
 name: inspect
 
 on:
+  pull_request:
   workflow_call:
     secrets:
       SONAR_TOKEN:
