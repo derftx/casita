@@ -1,28 +1,15 @@
 jobs:
-  build:
-    name: build_jekyll
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: configure
-        uses: actions/configure-pages@v3
-      - name: build
-        uses: actions/jekyll-build-pages@v1
-        with:
-          destination: _site
-          source: jekyll
-      - name: upload
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: _site
+  inspect:
+    name: inspect_jekyll
+    uses: derftx/casita/.github/workflows/inspect.yaml@main
+    secrets: inherit
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     name: deploy_jekyll
-    needs: build
+    needs: inspect
     permissions:
       id-token: write
       pages: write

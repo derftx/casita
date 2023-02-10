@@ -18,7 +18,8 @@ jobs:
           path: _site
 
   scan:
-    name: test_jekyll
+    name: scan_jekyll
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -38,4 +39,8 @@ jobs:
 
 name: inspect
 
-on: pull_request
+on:
+  workflow_call:
+    secrets:
+      SONAR_TOKEN:
+        required: true
