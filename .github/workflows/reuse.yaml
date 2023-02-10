@@ -1,7 +1,7 @@
 jobs:
   inspect:
     name: inspect_jekyll
-    uses: .github/workflows/inspect.yaml
+    uses: ./.github/workflows/inspect.yaml
     secrets: inherit
 
 name: reuse
