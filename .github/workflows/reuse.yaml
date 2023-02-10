@@ -1,9 +1,9 @@
 jobs:
   inspect:
     name: inspect_jekyll
-    uses: derftx/casita/.github/workflows/inspect.yaml@main
+    uses: derftx/casita/.github/workflows/inspect.yaml@13-sonarcloud
     secrets: inherit
 
-name: release
+name: reuse
 
 on: pull_request
