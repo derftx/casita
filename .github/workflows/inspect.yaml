@@ -1,21 +1,10 @@
 jobs:
   build:
     name: build
-    runs-on: ubuntu-22.04
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: configure
-        uses: actions/configure-pages@v3
-      - name: build
-        uses: actions/jekyll-build-pages@v1
-        with:
-          destination: _site
-          source: jekyll
-      - name: upload
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: _site
+    uses: fredbelotte/fredbelotte/.github/workflows/build.yaml@main
+    with:
+      jekyll_destination: _site
+      jekyl_source: jekyll
 
   scan_dotnet:
     name: scan_dotnet
@@ -24,6 +13,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: configure
         uses: actions/setup-dotnet@v3
         with:
@@ -37,6 +28,7 @@ jobs:
           dotnet build
           dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover -p:ExcludeByFile='**/program.cs'
           dotnet sonarscanner end -d:sonar.login=${{secrets.SONAR_TOKEN}}
+        working-directory: dotnet
 
   scan_repository:
     name: scan_repository
