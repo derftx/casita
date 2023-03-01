@@ -4,7 +4,7 @@ jobs:
     uses: fredbelotte/fredbelotte/.github/workflows/build.yaml@main
     with:
       jekyll_destination: _site
-      jekyl_source: jekyll
+      jekyll_source: jekyll
 
   scan_dotnet:
     name: scan_dotnet
