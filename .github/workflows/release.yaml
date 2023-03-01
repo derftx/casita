@@ -1,6 +1,6 @@
 jobs:
   inspect:
-    name: inspect_jekyll
+    name: inspect
     uses: derftx/casita/.github/workflows/inspect.yaml@main
     secrets: inherit
 

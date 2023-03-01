@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning][semver].
 - configure the static website inspect and release workflows ([#11](https://github.com/derftx/casita/issues/11))
 - configure the repository static code analysis workflow ([#13](https://github.com/derftx/casita/issues/13))
 - configure the repository http service with node.js ([#15](https://github.com/derftx/casita/issues/15))
+- configure the repository http service with dotnet ([#16](https://github.com/derftx/casita/issues/16))
 
 ### changed
 
