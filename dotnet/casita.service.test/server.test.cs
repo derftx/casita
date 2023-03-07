@@ -8,7 +8,7 @@ namespace casita.service.test
     [Fact]
     public void Test_Server_Index()
     {
-      Assert.NotNull(Server.Index(new DefaultHttpContext()));
+      Assert.True(Server.Index(new DefaultHttpContext()) is Task);
     }
   }
 }

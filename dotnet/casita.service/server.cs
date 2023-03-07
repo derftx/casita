@@ -4,11 +4,11 @@ namespace casita.service
 {
   public static class Server
   {
-    public static Task Index(HttpContext context)
+    public static async Task Index(HttpContext context)
     {
       Log.Information("index route");
-      
-      return context.Response.WriteAsJsonAsync(new { runtime = ".NET Core" });
+
+      await context.Response.WriteAsJsonAsync(new { runtime = ".NET Core" });
     }
   }
 }
