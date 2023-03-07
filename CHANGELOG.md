@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning][semver].
 - configure the repository http service with node.js ([#15](https://github.com/derftx/casita/issues/15))
 - configure the repository http service with dotnet ([#16](https://github.com/derftx/casita/issues/16))
 - configure the repository structured logging library for node.js ([#18](https://github.com/derftx/casita/issues/18))
+- configure the repository structured logging library for dotnet ([#19](https://github.com/derftx/casita/issues/19))
 
 ### changed
 
