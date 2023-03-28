@@ -1,3 +1,7 @@
+env:
+  IMAGE_NAME: casita
+  REGISTRY: ghcr.io
+
 jobs:
   pack_dotnet:
     name: pack_dotnet
@@ -11,6 +15,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
+      - id: metadata
+        name: configure
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/dotnet
 
   pack_nodejs:
     name: pack_nodejs
@@ -24,6 +33,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ${{ env.REGISTRY }}
           usernmae: ${{ github.actor }}
+      - id: metadata
+        name: configure
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/nodejs
 
 name: publish
 
