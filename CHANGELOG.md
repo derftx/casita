@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning][semver].
 
 - configure the repository deployment image for node.js [#19](https://github.com/derftx/casita/issues/19)
 - configure the repository deployment image for dotnet [#21](https://github.com/derftx/casita/issues/21)
+- configure the repository publish workflow [#22](https://github.com/derftx/casita/issues/22)
 
 ### changed
 
