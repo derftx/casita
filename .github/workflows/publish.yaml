@@ -20,6 +20,13 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/dotnet
+      - name: pack
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: .docker/dotnet.dockerfile
+          push: true
+          tags: ${{ steps.metadata.outputs.tags }}
 
   pack_nodejs:
     name: pack_nodejs
@@ -38,6 +45,13 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/nodejs
+      - name: pack
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: .docker/nodejs.dockerfile
+          push: true
+          tags: ${{ steps.metadata.outputs.tags }}
 
 name: publish
 
