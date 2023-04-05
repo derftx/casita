@@ -9,10 +9,6 @@ and this project adheres to [Semantic Versioning][semver].
 
 ### added
 
-- configure the repository deployment image for node.js [#19](https://github.com/derftx/casita/issues/19)
-- configure the repository deployment image for dotnet [#21](https://github.com/derftx/casita/issues/21)
-- configure the repository publish workflow [#22](https://github.com/derftx/casita/issues/22)
-
 ### changed
 
 ### deprecated
@@ -22,6 +18,14 @@ and this project adheres to [Semantic Versioning][semver].
 ### removed
 
 ### secured
+
+## [0.1.0] :: 2023-04-04
+
+### added
+
+- configure the repository deployment image for node.js [#19](https://github.com/derftx/casita/issues/19)
+- configure the repository deployment image for dotnet [#21](https://github.com/derftx/casita/issues/21)
+- configure the repository publish workflow [#22](https://github.com/derftx/casita/issues/22)
 
 ## [0.0.0] :: 2023-03-07
 
@@ -42,6 +46,7 @@ and this project adheres to [Semantic Versioning][semver].
 - downgrade the sass version on the linux platform [#7](https://github.com/derftx/casita/issues/7)
 - add support for the ruby platform [#9](https://github.com/derftx/casita/issues/9)
 
+[0.1.0]: https://github.com/derftx/casita/compare/0.0.0...0.1.0
 [0.0.0]: https://github.com/derftx/casita/commits/0.0.0
 [changelog]: https://keepachangelog.com/en/1.0.0
 [semver]: https://semver.org/spec/v2.0.0.html
